@@ -16,7 +16,7 @@ Enabling Landing Assist is only possible while you are falling, When you click t
 The "assist" only does something when you throttle up to relight the raptor engines. when you do this the Aft flaps will tuck in, the RCS will enable and the Front flaps will completly fold out.
 If you have the "SAS Control" button enabled it will also set your SAS Mode to retrograde.
 once the flip is complete the Front flaps will tuck in also and the SAS Mode will be set to Radial out when its safe to do so.
-it will also automatically deploy the landing legs when you are getting close to the ground.
+it will also automatically deploy the landing legs when you are getting close to the ground and repeatedly press Action group 10 for autoleveling which some starships might have.
 After landing the Script will reset the flaps to their default angles and turn off the RCS, ready for another flight!
 
 Pressing the backspace button or clicking the abort button next to the altimeter will reset the computer incase anything is going wrong,
