@@ -6,7 +6,8 @@ local GUI_Y is 80. //Y coordinate for GUI.
 local FrontAngleDefault is 60. //Default angle for the front flaps
 local RearAngleDefault is 60. //Default angle for the aft flaps
 local AuthLimitDefault is 15. //Default Authority limiter.
-local AbortReset is true. //Disable this to disable the abort action group ressetting the script.
+local AbortReset is true. //Disable this to disable the abort action group ressetting the script. Mutually exclusive with AbortEngineStart. AbortReset takes priority if both true.
+local AbortEngineStart is false. //This turns on the starship engines when the abort key is pressed. Mutually exclusive with AbortReset. Only 1 can be true. AbortReset Takes Priority if True.
 
 //functions
 Function CreateGUI { //I'm pretty bad at creating GUI's but it works.
@@ -86,7 +87,7 @@ Function CreateGUI { //I'm pretty bad at creating GUI's but it works.
     set Engine2Button:onclick to {SLEngineControl(Engine1Button:pressed, Engine2Button:pressed, Engine3Button:pressed).}.
     set Engine3Button:onclick to {SLEngineControl(Engine1Button:pressed, Engine2Button:pressed, Engine3Button:pressed).}.
 
-    set RvacButton:onclick to {VacEngineControl(RvacButton:pressed).}.
+    set RvacButton:onclick to {if ShowRvacButton { VacEngineControl(RvacButton:pressed). }}.
 
     set LandingAssistButton:onclick to {LandingAssist().}.
     StarshipGUI:show().
@@ -249,9 +250,25 @@ Function LandingAssist {
 }
 
 //main code
-when abort and AbortReset then {
+when abort then {
+    wait 0.2.
     abort off.
-    reboot.
+    if AbortReset {
+        Reboot.
+    }
+    else if AbortEngineStart {
+        set Engine1Button:pressed to 1.
+        set Engine2Button:pressed to 1.
+        set Engine3Button:pressed to 1.
+        set RvacButton:pressed to 1.
+        if not(ship:status = "Orbiting") and not(ship:status = "Escaping") {
+            set ship:control:pilotmainthrottle to 1.
+            sas on.
+            rcs on.
+        }
+    }
+    wait 0.2.
+    preserve.
 }
 CreateGUI().
 FlapControl(FrontFlapSlider:value, RearFlapSlider:value, AuthSlider:value).
