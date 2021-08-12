@@ -261,7 +261,7 @@ when abort then {
         set Engine2Button:pressed to 1.
         set Engine3Button:pressed to 1.
         set RvacButton:pressed to 1.
-        if not(ship:status = "Orbiting") and not(ship:status = "Escaping") {
+        if not(ship:status = "Orbiting") and not(ship:status = "Escaping") and not(ship:status = "Landed") and not(ship:status = "Splashed") {
             set ship:control:pilotmainthrottle to 1.
             sas on.
             rcs on.
