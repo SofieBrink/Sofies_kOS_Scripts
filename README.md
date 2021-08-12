@@ -21,7 +21,7 @@ After landing the Script will reset the flaps to their default angles and turn o
 
 Pressing the backspace button or clicking the abort button next to the altimeter will reset the computer incase anything is going wrong,
 This feature can be disabled with the User changable variables at the start of the script.
-There is another feature which can only be enabled of the AbortReset is false. It will ignite all (Defined*) engines on you starship and set the throttle to full if you are not in orbit, Landed or on an escape trajectory.
+There is another feature which can only be enabled of the AbortReset is false. It will ignite all (Defined*) engines on your starship and set the throttle to full if you are not in orbit, Landed or on an escape trajectory.
 
 * = If you have the Rvac's tagged Rvac but you have the button for them disabled they WILL NOT be lit.
 
