@@ -24,7 +24,7 @@ This feature can be disabled with the User changable variables at the start of t
 There is another feature which can only be enabled of the AbortReset is false. It will ignite all (Defined*) engines on you starship and set the throttle to full if you are not in orbit, Landed or on an escape trajectory.
 
 * = If you have the Rvac's tagged Rvac but you have the button for them disabled they WILL NOT be lit.
-* 
+
 Also keep in mind that you will still need to manually deploy the flaps either using action groups or some other way.
 
 Last but not least, I am not responsible for any Starship crashes that may occur!
