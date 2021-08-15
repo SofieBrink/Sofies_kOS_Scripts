@@ -7,7 +7,7 @@ there is a few more user changable variables at the start of the script.
 
 A quick Rundown, The button at the top right of the script is a minimize button. pressing this will collapse the GUI down into a smaller form factor when you do not need it.
 The three buttons in the shape of a triangle correspond to the states of the Sea Level engines on the ship. Keep in mind these buttons assume Umbilical side up and Heatshield side down.
-So if you are falling upside down somehow think about what engines to use!
+So if you are falling upside down somehow, think about what engines to use!
 The two sliders speak for themselves, these  set the deploy angles on the Front and Aft flaps.
 The "Link Sliders" button will figuratively connect the Front and Aft sliders together, Meaning that if you adjust one The other will do the same.
 The Authority slider once more speaks for itself. It sets the control Authority on all flaps.
@@ -21,7 +21,7 @@ After landing the Script will reset the flaps to their default angles and turn o
 
 Pressing the backspace button or clicking the abort button next to the altimeter will reset the computer incase anything is going wrong,
 This feature can be disabled with the User changable variables at the start of the script.
-There is another feature which can only be enabled of the AbortReset is false. It will ignite all (Defined*) engines on your starship and set the throttle to full if you are not in orbit, Landed or on an escape trajectory.
+There is another feature which can only be enabled if the AbortReset is false. It will ignite all (Defined*) engines on your starship and set the throttle to full if you are not in orbit, Landed or on an escape trajectory.
 
 * = If you have the Rvac's tagged Rvac but you have the button for them disabled they WILL NOT be lit.
 
