@@ -120,12 +120,18 @@ function SLEngineControl {
     local Engine3 is ship:partstaggedpattern("Engine 3").
     if Eng1{
         for eng in Engine1 {
+        if eng:hasmodule("ModuleSEPRaptor") {
+            Eng:getmodule("ModuleSEPRaptor"):setfield("actuate out", 0).
+        }
         Eng:getmodule("ModuleGimbal"):setfield("gimbal", 0).
         Eng:Activate.
         }
     }
     else {
         for eng in Engine1 {
+        if eng:hasmodule("ModuleSEPRaptor") {
+            Eng:getmodule("ModuleSEPRaptor"):setfield("actuate out", 1).
+        }
         Eng:getmodule("ModuleGimbal"):setfield("gimbal", 1).
         Eng:Shutdown.
         }
@@ -133,12 +139,18 @@ function SLEngineControl {
     
     if Eng2{
         for eng in Engine2 {
+        if eng:hasmodule("ModuleSEPRaptor") {
+            Eng:getmodule("ModuleSEPRaptor"):setfield("actuate out", 0).
+        }
         Eng:getmodule("ModuleGimbal"):setfield("gimbal", 0).
         Eng:Activate.
         }
     }
     else {
         for eng in Engine2 {
+        if eng:hasmodule("ModuleSEPRaptor") {
+            Eng:getmodule("ModuleSEPRaptor"):setfield("actuate out", 1).
+        }
         Eng:getmodule("ModuleGimbal"):setfield("gimbal", 1).
         Eng:Shutdown.
         }
@@ -146,12 +158,18 @@ function SLEngineControl {
 
     if Eng3{
         for eng in Engine3 {
+        if eng:hasmodule("ModuleSEPRaptor") {
+            Eng:getmodule("ModuleSEPRaptor"):setfield("actuate out", 0).
+        }
         Eng:getmodule("ModuleGimbal"):setfield("gimbal", 0).
         Eng:Activate.
         }
     }
     else {
         for eng in Engine3 {
+        if eng:hasmodule("ModuleSEPRaptor") {
+            Eng:getmodule("ModuleSEPRaptor"):setfield("actuate out", 1).
+        }
         Eng:getmodule("ModuleGimbal"):setfield("gimbal", 1).
         Eng:Shutdown.
         }
@@ -273,4 +291,5 @@ when abort then {
 CreateGUI().
 FlapControl(FrontFlapSlider:value, RearFlapSlider:value, AuthSlider:value).
 SLEngineControl(Engine1Button:pressed, Engine2Button:pressed, Engine3Button:pressed).
+VacEngineControl(RvacButton:pressed).
 wait until false.
