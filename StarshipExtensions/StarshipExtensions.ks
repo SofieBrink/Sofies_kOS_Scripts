@@ -103,12 +103,12 @@ Function FlapControl{
     parameter AftDeployAngle.
     parameter AuthLimit.
     for Flap in AftFlaps {
-        Flap:getmodule("ModuleTundraControlSurface"):setfield("Deploy Angle", AftDeployAngle).
-        Flap:getmodule("ModuleTundraControlSurface"):setfield("Authority Limiter", AuthLimit).
+        Flap:getmodule("ModuleSEPControlSurface"):setfield("Deploy Angle", AftDeployAngle).
+        Flap:getmodule("ModuleSEPControlSurface"):setfield("Authority Limiter", AuthLimit).
     }
     for Flap in FrontFlaps {
-        Flap:getmodule("ModuleTundraControlSurface"):setfield("Deploy Angle", FrontDeployAngle).
-        Flap:getmodule("ModuleTundraControlSurface"):setfield("Authority Limiter", AuthLimit).
+        Flap:getmodule("ModuleSEPControlSurface"):setfield("Deploy Angle", FrontDeployAngle).
+        Flap:getmodule("ModuleSEPControlSurface"):setfield("Authority Limiter", AuthLimit).
     }
 }
 function SLEngineControl {
